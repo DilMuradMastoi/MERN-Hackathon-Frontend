@@ -1,8 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API = axios.create({
-  baseURL: 'https://mern-hackathon-backend.vercel.app',
-  withCredentials: true
+const API_URL = import.meta.env.VITE_API_URL;
+
+export const api = axios.create({
+  baseURL: API_URL,
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
-
-export default API;
